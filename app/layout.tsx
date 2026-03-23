@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "AWMA.DEV - QA",
   description: "Abdulwahid Abdul is a Software QA Tester and Front-End Web Developer with a passion for building reliable, user-friendly web applications.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.png",
   },
   openGraph: {
     title: "AWMA.DEV - QA",

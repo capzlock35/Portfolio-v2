@@ -10,7 +10,7 @@ import {
 import '@/components/ScrollVelocity.css';
 
 // All tech stack logos/names - combine into continuous string
-const techStackString = "React • Next.js • TypeScript • JavaScript • Node.js • Express.js • Python • PostgreSQL • MongoDB • Tailwind CSS • GSAP • Three.js • Git • Docker • AWS • GraphQL • Redis • HTML5 • CSS3 • Laravel • PHP • MySQL • ";
+const techStackString = "React • Next.js • HTML • CSS • JavaScript • Tailwind CSS • Python • Node.js • MongoDB • MySQL • Playwright • Pytest • Postman • Selenium • GitHub • VS Code • Jira • PyCharm • TestRail • Bugzilla • Vercel • Git •";
 
 function useElementWidth<T extends HTMLElement>(ref: React.RefObject<T | null>): number {
   const [width, setWidth] = useState(0);
