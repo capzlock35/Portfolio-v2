@@ -93,16 +93,9 @@ export default function Hero() {
 
                     {/* Big stacked title */}
                 <div className="flex-1 flex items-center py-6">
-                <div className={`w-full max-w-full px-2 sm:pr-1 leading-[0.9] sm:leading-[0.82] font-black uppercase tracking-tight text-[clamp(2.8rem,14vw,9.25rem)] sm:text-[clamp(4.8rem,20vw,9.8rem)] text-white/55 select-none transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                <div className={`w-full max-w-full px-2 sm:pr-1 leading-[0.9] sm:leading-[0.82] font-black uppercase tracking-tight text-[clamp(2.4rem,12vw,8rem)] sm:text-[clamp(4rem,18vw,8.5rem)] text-white/55 select-none transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100" : "opacity-0"}`}>
                     
-                    <div className="max-w-full">{ROLES[roleIndex].line1.split(" ")[0]}</div>
-
-                    {ROLES[roleIndex].line1.split(" ").length > 1 && (
-                      <div className="relative max-w-full">
-                        <div className="absolute left-0 top-[0.62em] h-1 sm:h-2 w-[clamp(1.5rem,6vw,4.6rem)] bg-white/25" />
-                        <div className="pl-[clamp(1.8rem,7vw,5.2rem)]">{ROLES[roleIndex].line1.split(" ").pop()}</div>
-                      </div>
-                    )}
+                    <div className="max-w-full">{ROLES[roleIndex].line1}</div>
 
                     <div className="max-w-full">{ROLES[roleIndex].line2}</div>
                     <div className="max-w-full">{ROLES[roleIndex].line3}</div>
@@ -125,7 +118,7 @@ export default function Hero() {
                 <div className="hidden md:block px-4 sm:px-6 md:pl-12 lg:pl-20 py-8 sm:py-12 md:py-16 lg:py-20">
                     <div className="flex flex-col space-y-1 sm:space-y-2 md:space-y-3 lg:space-y-4">
                     {/* First line - SOFTWARE / FRONT - END */}
-                    <div className={`hero-text-block group relative inline-block overflow-hidden px-4 sm:px-6 md:px-8 transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                    <div className={`hero-text-block group relative inline-block overflow-hidden px-2 sm:px-4 md:px-6 transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100" : "opacity-0"}`}>
                         <div className="pointer-events-none absolute inset-0 origin-left scale-x-0 opacity-0 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100 group-hover:opacity-100 will-change-[transform,opacity]">
                             <div className="absolute inset-0 bg-white/10" />
                             <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0" />
@@ -135,7 +128,7 @@ export default function Hero() {
                         <div className="pointer-events-none absolute -inset-2 sm:-inset-3 md:-inset-4 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 will-change-[opacity]">
                             <div className="absolute inset-0 rounded-md bg-white/10 blur-xl" />
                         </div>
-                        <div className="relative text-[clamp(3.5rem,11vw,12rem)] font-black uppercase leading-[0.9] sm:leading-none select-none transition-[letter-spacing,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 sm:group-hover:translate-x-2 md:group-hover:translate-x-3 group-hover:tracking-[0.03em] sm:group-hover:tracking-[0.04em] md:group-hover:tracking-[0.02em] will-change-transform">
+                        <div className="relative text-[clamp(3rem,10vw,10.5rem)] font-black uppercase leading-[0.9] sm:leading-none select-none transition-[letter-spacing,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 sm:group-hover:translate-x-2 md:group-hover:translate-x-3 group-hover:tracking-[0.03em] sm:group-hover:tracking-[0.04em] md:group-hover:tracking-[0.02em] will-change-transform">
                             <span
                                 className="absolute inset-0 opacity-30 transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-0"
                                 style={{
@@ -153,7 +146,7 @@ export default function Hero() {
                     </div>
 
                     {/* Second line - QA / WEB */}
-                    <div className={`hero-text-block group relative inline-block overflow-hidden px-4 sm:px-6 md:px-8 transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                    <div className={`hero-text-block group relative inline-block overflow-hidden px-2 sm:px-4 md:px-6 transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100" : "opacity-0"}`}>
                         <div className="pointer-events-none absolute inset-0 origin-left scale-x-0 opacity-0 transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100 group-hover:opacity-100 will-change-[transform,opacity]">
                             <div className="absolute inset-0 bg-white/10" />
                             <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0" />
@@ -163,7 +156,7 @@ export default function Hero() {
                         <div className="pointer-events-none absolute -inset-2 sm:-inset-3 md:-inset-4 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 will-change-[opacity]">
                             <div className="absolute inset-0 rounded-md bg-white/10 blur-xl" />
                         </div>
-                        <div className="relative text-[clamp(3.5rem,11vw,12rem)] font-black uppercase leading-[0.9] sm:leading-none select-none transition-[letter-spacing,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 sm:group-hover:translate-x-2 md:group-hover:translate-x-3 group-hover:tracking-[0.03em] sm:group-hover:tracking-[0.04em] md:group-hover:tracking-[0.06em] will-change-transform">
+                        <div className="relative text-[clamp(3rem,10vw,10.5rem)] font-black uppercase leading-[0.9] sm:leading-none select-none transition-[letter-spacing,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 sm:group-hover:translate-x-2 md:group-hover:translate-x-3 group-hover:tracking-[0.03em] sm:group-hover:tracking-[0.04em] md:group-hover:tracking-[0.06em] will-change-transform">
                             <span
                                 className="absolute inset-0 opacity-30 transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-0"
                                 style={{
@@ -227,7 +220,7 @@ export default function Hero() {
                     </div>
 
                     {/* Third line - ENGINEER / DEVELOPER */}
-                    <h1 className={`hero-text-block text-[clamp(2.5rem,9vw,12rem)] font-black uppercase leading-[0.9] sm:leading-none text-gray-400 px-4 sm:px-6 md:px-8 transition-opacity duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100" : "opacity-0"}`}>
+                    <h1 className={`hero-text-block text-[clamp(2.2rem,8vw,10rem)] font-black uppercase leading-[0.9] sm:leading-none text-gray-400 px-2 sm:px-4 md:px-6 transition-opacity duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100" : "opacity-0"}`}>
                         <span className="sr-only">{ROLES[roleIndex].line1} {ROLES[roleIndex].line2} </span>
                         {ROLES[roleIndex].line3}
                     </h1>
