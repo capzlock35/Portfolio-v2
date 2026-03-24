@@ -9,6 +9,7 @@ export default function AppNavbar() {
     const [currentTime, setCurrentTime] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
     const [navHidden, setNavHidden] = useState(false);
+    const [showExpModal, setShowExpModal] = useState(false);
 
     useEffect(() => {
         const updateTime = () => {
@@ -77,6 +78,14 @@ export default function AppNavbar() {
 
                 {/* Center - Desktop Navigation */}
                 <div className="hidden lg:flex items-center gap-8 md:gap-12 lg:gap-16">
+                    {/* EXP Button */}
+                    <button
+                        onClick={() => setShowExpModal(true)}
+                        className="relative uppercase tracking-wider text-xs md:text-sm font-medium transition-all text-white/60 hover:text-white"
+                    >
+                        EXP.
+                    </button>
+
                     {navItems.map((item) => {
                         const isActive = pathname === item.href;
                         const isHashLink = item.href.startsWith("#");
@@ -171,6 +180,26 @@ export default function AppNavbar() {
                     </button>
 
                     {/* Nav Links */}
+                    {/* EXP Button */}
+                    <button
+                        onClick={() => {
+                            setShowExpModal(true);
+                            setMenuOpen(false);
+                        }}
+                        className={`group relative block py-4 transition-all duration-500 ${
+                            menuOpen
+                                ? "opacity-100 translate-y-0"
+                                : "opacity-0 translate-y-8"
+                        }`}
+                        style={{
+                            transitionDelay: menuOpen ? `150ms` : "0ms",
+                        }}
+                    >
+                        <span className={`text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wider transition-colors duration-300 text-white/40 group-hover:text-white`}>
+                            EXP.
+                        </span>
+                    </button>
+
                     {navItems.map((item, i) => {
                         const isActive = pathname === item.href;
                         const isHashLink = item.href.startsWith("#");
@@ -264,6 +293,112 @@ export default function AppNavbar() {
                     </div>
                 </div>
             </div>
+
+            {/* Experience Modal */}
+            {showExpModal && (
+                <div className="fixed inset-0 z-60 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+                    <style>{`
+                        .exp-modal-scroll::-webkit-scrollbar {
+                            width: 6px;
+                        }
+                        .exp-modal-scroll::-webkit-scrollbar-track {
+                            background: transparent;
+                        }
+                        .exp-modal-scroll::-webkit-scrollbar-thumb {
+                            background: rgba(255, 255, 255, 0.15);
+                            border-radius: 3px;
+                        }
+                        .exp-modal-scroll::-webkit-scrollbar-thumb:hover {
+                            background: rgba(255, 255, 255, 0.25);
+                        }
+                    `}</style>
+                    <div className="relative bg-black border border-white/10 rounded-xl max-w-4xl w-full h-[90vh] md:h-auto md:max-h-[90vh] overflow-hidden flex flex-col">
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setShowExpModal(false)}
+                            className="absolute top-4 md:top-8 right-4 md:right-8 text-white/40 hover:text-white transition-colors z-10"
+                            aria-label="Close modal"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                        </button>
+
+                        {/* Modal Content - Scrollable */}
+                        <div className="exp-modal-scroll overflow-y-auto flex-1">
+                            <div className="pt-12 md:pt-16 px-4 md:px-16 pb-8">
+                                {/* Title */}
+                                <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tight text-white mb-8 md:mb-12">
+                                    Experience
+                                </h2>
+
+                                {/* Job Header Box */}
+                                <div className="bg-white/[0.03] border border-white/10 rounded-lg p-6 md:p-10 mb-8 md:mb-12">
+                                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 mb-4 md:mb-6">
+                                        <h3 className="text-xl md:text-4xl font-black uppercase tracking-tight text-white">
+                                            Software QA Engineer
+                                        </h3>
+                                    </div>
+
+                                    {/* Accent Line - Gray */}
+                                    <div className="h-1 w-full bg-gradient-to-r from-white/50 via-white/30 to-transparent rounded-full mb-4 md:mb-6" />
+
+                                    {/* Job Meta */}
+                                    <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-6">
+                                        <p className="text-white/70 uppercase text-xs md:text-base tracking-[0.15em] font-medium">
+                                            Socia, Taguig City
+                                        </p>
+                                        <div className="hidden md:block w-px h-5 bg-white/20" />
+                                        <p className="text-white/50 uppercase text-xs md:text-base tracking-[0.1em] font-mono">
+                                            10/2025 – Present
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Description */}
+                                <p className="text-white/70 text-base md:text-xl leading-relaxed mb-6 md:mb-8">
+                                    Serve as the one‑man QA for the team, independently managing all testing responsibilities across multiple projects.
+                                </p>
+
+                                {/* Job Responsibilities */}
+                                <div className="space-y-4 md:space-y-6">
+                                    <div className="flex gap-3 md:gap-6">
+                                        <div className="w-1 flex-shrink-0 bg-gradient-to-b from-white/50 via-white/30 to-transparent rounded-full" />
+                                        <p className="text-white/60 text-sm md:text-lg leading-relaxed">
+                                            Handle numerous large, high‑traffic client websites, ensuring quality, stability, and seamless user experience.
+                                        </p>
+                                    </div>
+
+                                    <div className="flex gap-3 md:gap-6">
+                                        <div className="w-1 flex-shrink-0 bg-gradient-to-b from-white/50 via-white/30 to-transparent rounded-full" />
+                                        <p className="text-white/60 text-sm md:text-lg leading-relaxed">
+                                            Perform comprehensive manual and automation testing, including functional, regression, and cross‑browser testing.
+                                        </p>
+                                    </div>
+
+                                    <div className="flex gap-3 md:gap-6">
+                                        <div className="w-1 flex-shrink-0 bg-gradient-to-b from-white/50 via-white/30 to-transparent rounded-full" />
+                                        <p className="text-white/60 text-sm md:text-lg leading-relaxed">
+                                            Create clear and detailed bug reports and oversee ticketing and issue‑tracking processes.
+                                        </p>
+                                    </div>
+
+                                    <div className="flex gap-3 md:gap-6">
+                                        <div className="w-1 flex-shrink-0 bg-gradient-to-b from-white/50 via-white/30 to-transparent rounded-full" />
+                                        <p className="text-white/60 text-sm md:text-lg leading-relaxed">
+                                            Develop and execute test plans, scenarios, and test cases tailored to each assigned website.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Bottom Padding */}
+                                <div className="h-8 md:h-4" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 }
