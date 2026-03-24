@@ -174,7 +174,7 @@ export default function Marquee() {
                         className="flex items-center whitespace-nowrap will-change-transform"
                     >
                         <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
-                            Delivery 
+                            Creation 
                         </span>
                         <span className="text-[clamp(2rem,3vw,3.5rem)] text-white/20 mx-14 select-none font-light italic">
                             &
