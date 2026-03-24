@@ -3,6 +3,13 @@
  * Kept separate from the main project list so detail routing and static generation stay predictable.
  */
 export const PROJECT_DESCRIPTIONS: Readonly<Record<string, string>> = {
+        "manufacturing-admin-system": `
+        A comprehensive manufacturing admin system designed to streamline production workflows,
+        manage inventory, and oversee daily operations. The system provides real-time monitoring,
+        reporting tools, and administrative controls to improve efficiency and decision-making.
+    `,
+        "worldvr-build-tools":
+        "A sleek and modern landing page for a virtual reality development platform, focused on showcasing developer tools and features through clean UI/UX, responsive design, and high-quality frontend implementation.",
     "attendance-monitoring-system":
         "A web-based attendance monitoring system with real-time time-in/time-out logging, admin controls, and automated attendance reporting.",
     "outfit-haven-ecommerce-platform":

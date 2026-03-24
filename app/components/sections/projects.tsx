@@ -134,7 +134,7 @@ export default function Projects() {
                         Featured<br className="lg:hidden" /> <span className="lg:block">Work</span>
                     </h2>
                     <p className="text-white/40 text-sm md:text-lg italic leading-relaxed max-w-2xl lg:max-w-xl">
-                        A collection of projects showcasing full-stack development and modern design.
+                        Projects highlighting my skills as a Software QA Tester Engineer and Frontend Web Developer, focused on delivering reliable, user-friendly, and high-quality web applications.
                     </p>
                 </div>
 
@@ -178,6 +178,9 @@ export default function Projects() {
                                                 <h3 className="text-white font-black uppercase tracking-tight text-xl leading-tight">
                                                     {project.title}
                                                 </h3>
+                                                <p className="text-white/60 text-sm italic font-medium mt-1">
+                                                    {project.role}
+                                                </p>
                                             </div>
 
                                             <div className="flex items-center gap-3 shrink-0">
@@ -293,6 +296,15 @@ export default function Projects() {
                                                             <ExternalLink className="w-4 h-4" />
                                                         </span>
                                                     </div>
+
+                                                    <p
+                                                        className={[
+                                                            "text-sm md:text-base italic font-medium transition-colors mt-1",
+                                                            isActive ? "text-white/70" : "text-white/35 group-hover:text-white/60"
+                                                        ].join(" ")}
+                                                    >
+                                                        {project.role}
+                                                    </p>
 
                                                     <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-white/30 font-mono text-[10px] uppercase tracking-widest">
                                                         <span>{project.year}</span>
