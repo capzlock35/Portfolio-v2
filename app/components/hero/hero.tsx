@@ -216,7 +216,7 @@ export default function Hero() {
                             <span className="text-white/60">]</span>
                         </div>
 
-                        <div className="text-white/50">&#125;;</div>
+                        <div className="text-white/50">&#125;;<span className="inline-block ml-0.5 w-0.5 h-4 bg-white/60 animate-pulse align-text-bottom" /></div>
                     </div>
 
                     {/* Third line - ENGINEER / DEVELOPER */}
