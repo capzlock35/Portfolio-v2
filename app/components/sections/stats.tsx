@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -34,6 +34,7 @@ const techStacks = [
 
 export default function Stats() {
     const sectionRef = useRef<HTMLElement>(null);
+    const [imageFormats, setImageFormats] = useState<Record<string, string>>({});
 
     useEffect(() => {
         if (!sectionRef.current) return;
@@ -162,25 +163,39 @@ export default function Stats() {
 
                                     <div className="col-span-12 sm:col-span-8">
                                         <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
-                                            {group.items.map((item) => (
-                                                <div
-                                                    key={item}
-                                                    className="tech-anim flex items-center gap-2 sm:gap-3 pr-2 sm:pr-3 min-w-0"
-                                                    title={item}
-                                                >
-                                                    <Image
-                                                        src={`${group.iconDir}/${item}.svg`}
-                                                        alt={item}
-                                                        width={40}
-                                                        height={40}
-                                                        sizes="(max-width: 640px) 28px, (max-width: 1024px) 32px, 40px"
-                                                        className="opacity-100 w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 shrink-0"
-                                                    />
-                                                    <span className="text-[11px] sm:text-xs md:text-sm font-mono uppercase tracking-wider text-white/60 whitespace-nowrap">
-                                                        {item}
-                                                    </span>
-                                                </div>
-                                            ))}
+                                            {group.items.map((item) => {
+                                                const imageKey = `${group.label}-${item}`;
+                                                const imageFormat = imageFormats[imageKey] || "svg";
+                                                const imageSrc = `${group.iconDir}/${item}.${imageFormat}`;
+
+                                                return (
+                                                    <div
+                                                        key={item}
+                                                        className="tech-anim flex items-center gap-2 sm:gap-3 pr-2 sm:pr-3 min-w-0"
+                                                        title={item}
+                                                    >
+                                                        <Image
+                                                            src={imageSrc}
+                                                            alt={item}
+                                                            width={40}
+                                                            height={40}
+                                                            sizes="(max-width: 640px) 28px, (max-width: 1024px) 32px, 40px"
+                                                            className="opacity-100 w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 shrink-0"
+                                                            onError={() => {
+                                                                if (imageFormat === "svg") {
+                                                                    setImageFormats((prev) => ({
+                                                                        ...prev,
+                                                                        [imageKey]: "png",
+                                                                    }));
+                                                                }
+                                                            }}
+                                                        />
+                                                        <span className="text-[11px] sm:text-xs md:text-sm font-mono uppercase tracking-wider text-white/60 whitespace-nowrap">
+                                                            {item}
+                                                        </span>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 </div>
