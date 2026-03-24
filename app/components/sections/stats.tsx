@@ -9,6 +9,9 @@ if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 }
 
+// Map of items that use PNG format instead of SVG
+const pngItems = new Set(["Pycharm"]);
+
 const techStacks = [
     {
         label: "Frontend",
@@ -165,7 +168,7 @@ export default function Stats() {
                                         <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
                                             {group.items.map((item) => {
                                                 const imageKey = `${group.label}-${item}`;
-                                                const imageFormat = imageFormats[imageKey] || "svg";
+                                                const imageFormat = imageFormats[imageKey] || (pngItems.has(item) ? "png" : "svg");
                                                 const imageSrc = `${group.iconDir}/${item}.${imageFormat}`;
 
                                                 return (
