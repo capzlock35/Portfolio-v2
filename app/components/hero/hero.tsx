@@ -212,7 +212,7 @@ export default function Hero() {
                             tools: <span className="text-white/60">[</span>
                             <div className="pl-4 text-white/60">["GitHub", "VS Code", "Jira"],</div>
                             <div className="pl-4 text-white/60">["PyCharm", "TestRail", "Bugzilla"],</div>
-                            <div className="pl-4 text-white/60">["Vercel", "Git"]</div>
+                            <div className="pl-4 text-white/60">["Vercel", "Git", "Redmine"]</div>
                             <span className="text-white/60">]</span>
                         </div>
 
@@ -265,9 +265,12 @@ export default function Hero() {
                 </div>
 
                 {/* Live clock */}
-                <div className="hidden sm:flex items-center gap-3 text-white/30 font-mono text-xs tracking-wider">
-                    <span>LOCAL</span>
-                    <span className="text-white/50">{currentTime}</span>
+                <div className="hidden sm:flex flex-col items-center gap-2">
+                    <div className="flex items-center gap-3 text-white/30 font-mono text-xs tracking-wider">
+                        <span>LOCAL</span>
+                        <span className="text-white/50">{currentTime}</span>
+                    </div>
+                    <div className="text-white/20 font-mono text-[10px] tracking-[0.3em]">AWMA</div>
                 </div>
 
                 {/* Scroll indicator */}

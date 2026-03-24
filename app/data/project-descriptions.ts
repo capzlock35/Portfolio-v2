@@ -9,21 +9,27 @@ export const PROJECT_DESCRIPTIONS: Readonly<Record<string, string>> = {
         reporting tools, and administrative controls to improve efficiency and decision-making.
     `,
         "worldvr-build-tools":
-        "A sleek and modern landing page for a virtual reality development platform, focused on showcasing developer tools and features through clean UI/UX, responsive design, and high-quality frontend implementation.",
-    "attendance-monitoring-system":
-        "A web-based attendance monitoring system with real-time time-in/time-out logging, admin controls, and automated attendance reporting.",
-    "outfit-haven-ecommerce-platform":
-        "A modern e-commerce platform for local fashion brands in the Philippines with dynamic storefront experiences and secure order handling.",
-    "burger-ka-samen-ordering-system":
-        "A full-stack burger ordering platform with customer cart and checkout plus an admin dashboard for products, orders, and users.",
-    "omnichannel-ecommerce-analytics-system":
-        "A full-stack omnichannel platform integrating Shopee, Lazada, TikTok Shop, and Shopify for centralized analytics and operations.",
-    "enterprise-ecommerce-crm-hris-finance-ess":
-        "A multi-module enterprise platform centralizing CRM, HRIS, Finance, and ESS with real-time communication and operational analytics.",
-    "electronic-medical-record-system":
-        "A full-stack EMR platform for digitized patient record management, consultation tracking, and usage analytics.",
-    "car-dealership-trading-loan-management":
-        "A full-stack car dealership platform with customer application landing pages and admin tools for loans, leads, and role-based operations.",
+        `A sleek and modern landing page for a virtual reality development platform, focused on showcasing developer tools and features through clean UI/UX, responsive design, and high-quality frontend implementation.
+        `,
+        "streaming-platform": `
+    An innovative streaming platform designed to engage audiences by turning attention into rewards. 
+    The platform combines high-quality content delivery, interactive features, and real-time viewer incentives 
+    to create a more immersive and rewarding entertainment experience.
+`,
+    // "attendance-monitoring-system":
+    //     "A web-based attendance monitoring system with real-time time-in/time-out logging, admin controls, and automated attendance reporting.",
+    // "outfit-haven-ecommerce-platform":
+    //     "A modern e-commerce platform for local fashion brands in the Philippines with dynamic storefront experiences and secure order handling.",
+    // "burger-ka-samen-ordering-system":
+    //     "A full-stack burger ordering platform with customer cart and checkout plus an admin dashboard for products, orders, and users.",
+    // "omnichannel-ecommerce-analytics-system":
+    //     "A full-stack omnichannel platform integrating Shopee, Lazada, TikTok Shop, and Shopify for centralized analytics and operations.",
+    // "enterprise-ecommerce-crm-hris-finance-ess":
+    //     "A multi-module enterprise platform centralizing CRM, HRIS, Finance, and ESS with real-time communication and operational analytics.",
+    // "electronic-medical-record-system":
+    //     "A full-stack EMR platform for digitized patient record management, consultation tracking, and usage analytics.",
+    // "car-dealership-trading-loan-management":
+    //     "A full-stack car dealership platform with customer application landing pages and admin tools for loans, leads, and role-based operations.",
 };
 
 export function getProjectDescription(slug: string): string | undefined {

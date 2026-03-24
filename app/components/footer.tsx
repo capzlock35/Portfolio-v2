@@ -10,10 +10,17 @@ if (typeof window !== "undefined") {
 }
 
 const socialLinks = [
-    { name: "Email", icon: Mail, url: "mailto:abdulwahid01.abdul@gmail.com" },
     { name: "GitHub", icon: Github, url: "https://github.com/capzlock35" },
     { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/abdulwahidabdul/" },
-    { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/1AWMA/" },
+        { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/1AWMA/" },
+    { name: "Email", icon: Mail, url: "mailto:abdulwahid01.abdul@gmail.com" },
+];
+
+const navLinks = [
+    { label: "About", href: "#stats" },
+    { label: "Work", href: "#projects" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "Contact", href: "#contact" },
 ];
 
 export default function Footer() {
@@ -53,13 +60,13 @@ export default function Footer() {
                         <div>
                             <span className="text-xs uppercase tracking-[0.3em] text-white/40 font-medium mb-6 block">Navigation</span>
                             <nav className="flex flex-col gap-3">
-                                {["About", "Work", "Testimonials", "Contact"].map((item) => (
+                                {navLinks.map((link) => (
                                     <a 
-                                        key={item} 
-                                        href={`#${item.toLowerCase()}`}
+                                        key={link.label} 
+                                        href={link.href}
                                         className="text-lg md:text-xl uppercase font-bold text-white/60 hover:text-white transition-colors tracking-wide w-fit"
                                     >
-                                        {item}
+                                        {link.label}
                                     </a>
                                 ))}
                             </nav>

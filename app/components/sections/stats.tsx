@@ -30,7 +30,7 @@ const techStacks = [
     },
     {
         label: "Tools",
-        items: ["Github", "Git", "VsCode", "Jira", "Pycharm", "TestRail", "Bugzilla", "Vercel"],
+        items: ["Github", "Git", "VsCode", "Jira", "Pycharm", "TestRail", "Bugzilla", "Vercel", "Redmine"],
         iconDir: "/images/tools",
     },
 ];
@@ -123,7 +123,7 @@ export default function Stats() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative bg-black py-16 sm:py-20 lg:py-28 overflow-hidden">
+        <section ref={sectionRef} id="stats" className="relative bg-black py-16 sm:py-20 lg:py-28 overflow-hidden">
             <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-44 max-w-[1920px] mx-auto">
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-10 md:gap-14 lg:gap-16 items-start">
                     {/* Left — About */}

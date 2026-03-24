@@ -59,7 +59,7 @@ export default function AppNavbar() {
     }, [menuOpen]);
 
     const navItems = [
-        { name: "ABOUT", href: "/" },
+        { name: "ABOUT", href: "#stats" },
         { name: "PROJECTS", href: "/projects" },
         { name: "CONTACTS", href: "/#contact" },
     ];
@@ -68,14 +68,31 @@ export default function AppNavbar() {
         <>
             <nav className={`fixed top-0 w-full z-50 flex justify-between items-center p-6 px-8 md:px-12 lg:px-20 transition-transform duration-300 bg-black/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none ${navHidden && !menuOpen ? "-translate-y-full" : "translate-y-0"}`}>
                 {/* Left - Dashboard */}
-                <div className="text-white uppercase tracking-wider text-xs md:text-sm font-medium">
+                <button
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    className="text-white uppercase tracking-wider text-xs md:text-sm font-medium hover:text-white/80 transition-colors cursor-pointer"
+                >
                     DASHBOARD
-                </div>
+                </button>
 
                 {/* Center - Desktop Navigation */}
                 <div className="hidden lg:flex items-center gap-8 md:gap-12 lg:gap-16">
                     {navItems.map((item) => {
                         const isActive = pathname === item.href;
+                        const isHashLink = item.href.startsWith("#");
+                        
+                        if (isHashLink) {
+                            return (
+                                <a
+                                    key={item.href}
+                                    href={item.href}
+                                    className={`relative uppercase tracking-wider text-xs md:text-sm font-medium transition-all text-white/60 hover:text-white`}
+                                >
+                                    {item.name}
+                                </a>
+                            );
+                        }
+                        
                         return (
                             <Link
                                 key={item.href}
@@ -95,13 +112,13 @@ export default function AppNavbar() {
                     })}
 
                     {/* Right side nav */}
-                    <Link
-                        href="#contact"
-                        aria-label="Navigate to contact section"
+                    <a
+                        href="mailto:abdulwahid01.abdul@gmail.com"
+                        aria-label="Send email"
                         className="text-white uppercase tracking-wider text-xs md:text-sm font-medium hover:text-white/80 transition-colors"
                     >
                         LET&apos;S WORK
-                    </Link>
+                    </a>
                 </div>
 
                 {/* Mobile - Hamburger Button */}
@@ -156,6 +173,30 @@ export default function AppNavbar() {
                     {/* Nav Links */}
                     {navItems.map((item, i) => {
                         const isActive = pathname === item.href;
+                        const isHashLink = item.href.startsWith("#");
+                        
+                        if (isHashLink) {
+                            return (
+                                <a
+                                    key={item.href}
+                                    href={item.href}
+                                    onClick={() => setMenuOpen(false)}
+                                    className={`group relative block py-4 transition-all duration-500 ${
+                                        menuOpen
+                                            ? "opacity-100 translate-y-0"
+                                            : "opacity-0 translate-y-8"
+                                    }`}
+                                    style={{
+                                        transitionDelay: menuOpen ? `${150 + i * 75}ms` : "0ms",
+                                    }}
+                                >
+                                    <span className={`text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-wider transition-colors duration-300 text-white/40 group-hover:text-white`}>
+                                        {item.name}
+                                    </span>
+                                </a>
+                            );
+                        }
+                        
                         return (
                             <Link
                                 key={item.href}
@@ -197,8 +238,8 @@ export default function AppNavbar() {
                     />
 
                     {/* CTA */}
-                    <Link
-                        href="#contact"
+                    <a
+                        href="mailto:abdulwahid01.abdul@gmail.com"
                         onClick={() => setMenuOpen(false)}
                         className={`text-lg sm:text-xl font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-all duration-500 ${
                             menuOpen
@@ -208,7 +249,7 @@ export default function AppNavbar() {
                         style={{ transitionDelay: menuOpen ? "450ms" : "0ms" }}
                     >
                         LET&apos;S WORK
-                    </Link>
+                    </a>
 
                     {/* Time display at bottom */}
                     <div
