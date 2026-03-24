@@ -10,6 +10,26 @@ export default function AppNavbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [navHidden, setNavHidden] = useState(false);
     const [showExpModal, setShowExpModal] = useState(false);
+    const [isClosingExpModal, setIsClosingExpModal] = useState(false);
+    const [expModalReady, setExpModalReady] = useState(false);
+
+    useEffect(() => {
+        if (showExpModal) {
+            // Small delay to ensure mounting before triggering animation
+            const timer = setTimeout(() => setExpModalReady(true), 10);
+            return () => clearTimeout(timer);
+        } else {
+            setExpModalReady(false);
+        }
+    }, [showExpModal]);
+
+    const closeExpModal = () => {
+        setIsClosingExpModal(true);
+        setTimeout(() => {
+            setShowExpModal(false);
+            setIsClosingExpModal(false);
+        }, 500);
+    };
 
     useEffect(() => {
         const updateTime = () => {
@@ -296,7 +316,7 @@ export default function AppNavbar() {
 
             {/* Experience Modal */}
             {showExpModal && (
-                <div className="fixed inset-0 z-60 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+                <div className={`fixed inset-0 z-60 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 transition-opacity duration-300 ${isClosingExpModal ? "opacity-0" : "opacity-100"}`}>
                     <style>{`
                         .exp-modal-scroll::-webkit-scrollbar {
                             width: 6px;
@@ -312,10 +332,15 @@ export default function AppNavbar() {
                             background: rgba(255, 255, 255, 0.25);
                         }
                     `}</style>
-                    <div className="relative bg-black border border-white/10 rounded-xl max-w-4xl w-full h-[90vh] md:h-auto md:max-h-[90vh] overflow-hidden flex flex-col">
+                    <div 
+                        className={`relative bg-black border border-white/10 rounded-xl max-w-4xl w-full h-[90vh] md:h-auto md:max-h-[90vh] overflow-hidden flex flex-col transition-all duration-500 ease-out ${!expModalReady || isClosingExpModal ? "scale-95 opacity-0" : "scale-100 opacity-100"}`}
+                        style={{
+                            transform: !expModalReady || isClosingExpModal ? "translateY(-60px)" : "translateY(0)"
+                        }}
+                    >
                         {/* Close Button */}
                         <button
-                            onClick={() => setShowExpModal(false)}
+                            onClick={closeExpModal}
                             className="absolute top-4 md:top-8 right-4 md:right-8 text-white/40 hover:text-white transition-colors z-10"
                             aria-label="Close modal"
                         >
