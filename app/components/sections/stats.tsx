@@ -25,7 +25,7 @@ const techStacks = [
     },
     {
         label: "Testing",
-        items: ["Playwright", "Pytest", "Postman", "Selenium"],
+        items: ["Playwright", "Pytest", "Postman", "Selenium","JMeter"],
         iconDir: "/images/database",
     },
     {

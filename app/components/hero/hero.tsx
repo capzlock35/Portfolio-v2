@@ -203,7 +203,7 @@ export default function Hero() {
                         <div className="pl-4 text-white/40">
                             testing: <span className="text-white/60">[</span>
                             <div className="pl-4 text-white/60">["Playwright", "Pytest", "Postman"],</div>
-                            <div className="pl-4 text-white/60">["Selenium"]</div>
+                            <div className="pl-4 text-white/60">["Selenium", "JMeter"]</div>
                             <span className="text-white/60">],</span>
                         </div>
 
