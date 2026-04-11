@@ -85,10 +85,17 @@ export default function Footer() {
                     </div>
 
                     {/* Middle Section: Large Name Branding */}
-                    <div className="footer-content border-y border-white/5 py-12">
-                        <h1 className="text-[clamp(3rem,10vw,12rem)] font-black uppercase text-white/5 leading-none text-center select-none pointer-events-none">
-                            Wahid Abdul
-                        </h1>
+                    <div className="footer-content py-12
+                    bg-[linear-gradient(to_right,rgba(255,255,255,0.05),rgba(255,255,255,0.2),rgba(255,255,255,0.05))]
+                    bg-[length:100%_1px]
+                    bg-top bg-no-repeat
+                    after:content-[''] after:block after:w-full after:h-[1px]
+                    after:bg-[linear-gradient(to_right,rgba(255,255,255,0.05),rgba(255,255,255,0.2),rgba(255,255,255,0.05))]
+                    after:mt-12
+                    ">
+                    <h1 className="shine-text text-[clamp(3rem,10vw,12rem)] font-black uppercase leading-none text-center select-none pointer-events-none">
+                        Wahid Abdul
+                    </h1>
                     </div>
                 </div>
 

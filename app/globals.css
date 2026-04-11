@@ -257,3 +257,30 @@ input,
 textarea {
   cursor: text !important;
 }
+
+.shine-text {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.05) 0%,
+    rgba(255,255,255,0.12) 30%,
+    rgba(255,255,255,0.35) 50%,  /* darker shine */
+    rgba(255,255,255,0.12) 70%,
+    rgba(255,255,255,0.05) 100%
+  );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shineMove 6s linear infinite; /* slower */
+}
+
+@keyframes shineMove {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
