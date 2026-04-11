@@ -269,8 +269,8 @@ export default function Stats() {
                             <p>Ensuring Quality, Crafting Interfaces</p>
                             <p>That Users Can Trust.</p>
 
-                            <p className="mt-3">Open For Freelance / Full-Time</p>
-                            <p>Based In Quezon City, Ph</p>
+                            <p className="mt-3">Open For Part-Time / Full-Time</p>
+                            <p>Based In San Juan City, Ph</p>
                             </div>
 
                         </div>
