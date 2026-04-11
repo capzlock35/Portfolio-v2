@@ -72,7 +72,7 @@ export default function Hero() {
             </div>
 
             {/* ── Main content ── */}
-            <div className="w-full max-w-[1920px] mx-auto relative">
+            <div className="w-full max-w-480 mx-auto relative">
                 {/* Mobile layout (reference style) */}
                 <div className="md:hidden min-h-dvh px-4 sm:px-6 pt-6 pb-6 flex flex-col">
                     {/* Top mini header */}
@@ -203,7 +203,8 @@ export default function Hero() {
                         <div className="pl-4 text-white/40">
                             testing: <span className="text-white/60">[</span>
                             <div className="pl-4 text-white/60">["Playwright", "Pytest", "Postman"],</div>
-                            <div className="pl-4 text-white/60">["Selenium", "JMeter"]</div>
+                            <div className="pl-4 text-white/60">["Selenium", "JMeter", "K6"],</div>
+                            <div className="pl-4 text-white/60">["Artillery"]</div>
                             <span className="text-white/60">],</span>
                         </div>
 

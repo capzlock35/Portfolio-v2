@@ -25,7 +25,7 @@ const techStacks = [
     },
     {
         label: "Testing",
-        items: ["Playwright", "Pytest", "Postman", "Selenium","JMeter"],
+        items: ["Playwright", "Pytest", "Postman", "Selenium","JMeter","K6","Artillery"],
         iconDir: "/images/database",
     },
     {
@@ -50,12 +50,15 @@ export default function Stats() {
 
             const leftPanel = root.querySelector<HTMLElement>(".stats-panel-left");
             const rightPanel = root.querySelector<HTMLElement>(".stats-panel-right");
+            const profileLeftPanel = root.querySelector<HTMLElement>(".profile-panel-left");
+            const profileRightPanel = root.querySelector<HTMLElement>(".profile-panel-right");
 
             const statsItems = gsap.utils.toArray<HTMLElement>(".stats-anim", root);
             const techItems = gsap.utils.toArray<HTMLElement>(".tech-anim", root);
+            const profileItems = gsap.utils.toArray<HTMLElement>(".profile-anim", root);
 
-            const panels: HTMLElement[] = [leftPanel, rightPanel].filter((el): el is HTMLElement => !!el);
-            const allItems: HTMLElement[] = [...statsItems, ...techItems];
+            const panels: HTMLElement[] = [leftPanel, rightPanel, profileLeftPanel, profileRightPanel].filter((el): el is HTMLElement => !!el);
+            const allItems: HTMLElement[] = [...statsItems, ...techItems, ...profileItems];
 
             // Initial state: hidden + shifted down (prevents "static hidden" caused by competing triggers).
             gsap.set(panels, { autoAlpha: 0, y: 40, willChange: "transform,opacity" });
@@ -117,6 +120,9 @@ export default function Stats() {
 
             // Tech icons reveal one-by-one; fall out when scrolling up past them.
             techItems.forEach((el) => revealOneByOne(el, 26));
+
+            // Profile items reveal one-by-one.
+            profileItems.forEach((el) => revealOneByOne(el, 30));
         }, sectionRef);
 
         return () => ctx.revert();
@@ -204,6 +210,73 @@ export default function Stats() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </div>
+
+                {/* Profile Section - Image and Name */}
+                <div className="flex flex-col lg:flex-row lg:justify-between gap-10 md:gap-14 lg:gap-16 items-start mt-20 sm:mt-24 lg:mt-28">
+                    {/* Left — Profile Image */}
+<div className="profile-panel-left w-full lg:w-5/12">
+    <div className="relative w-full max-w-sm mx-auto">
+        
+        {/* Polaroid Frame */}
+        <div className="bg-white p-3 pb-2 rounded-sm shadow-2xl rotate-[-2deg] hover:rotate-0 transition duration-300">
+            
+            <Image
+                src="/images/awma.jpg"
+                alt="Wahid Abdul"
+                width={500}
+                height={600}
+                className="profile-anim w-full h-auto object-cover"
+                quality={90}
+            />
+
+            {/* Caption */}
+            <p className="mt-2 text-center text-xs font-mono text-gray-700 tracking-widest">
+                AWMA.dev
+            </p>
+                        <p className="mt-2 text-center text-xs font-mono text-gray-700 tracking-widest">
+                SOFTWARE QA ENGINEER
+            </p>
+
+        </div>
+    </div>
+</div>
+
+                    {/* Right — Profile Name */}
+                    <div className="profile-panel-right w-full lg:w-7/12 lg:self-center flex items-center">
+                    <div className="space-y-6 w-full">
+                        
+                        <h2 className="profile-anim text-[clamp(3rem,7vw,7rem)] font-black uppercase leading-[0.95] text-white/40 tracking-tight">
+                        
+                        {/* TOP SECTION */}
+                        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6 lg:gap-32">
+                            
+                            {/* NAME */}
+                            <div className="flex flex-col">
+                            <div>Wahid</div>
+
+                            <div className="flex items-baseline gap-2 mt-2">
+                                <div>Abdul</div>
+                                <div className="text-white/20 font-mono text-[10px] tracking-[0.3em]">
+                                -AWMA
+                                </div>
+                            </div>
+                            </div>
+
+                            {/* DESCRIPTION */}
+                            <div className="text-xs sm:text-sm font-normal text-white/40 leading-relaxed uppercase tracking-wider max-w-xs lg:max-w-sm">
+                            <p>Ensuring Quality, Crafting Interfaces</p>
+                            <p>That Users Can Trust.</p>
+
+                            <p className="mt-3">Open For Freelance / Full-Time</p>
+                            <p>Based In Quezon City, Ph</p>
+                            </div>
+
+                        </div>
+
+                        </h2>
+                    </div>
                     </div>
                 </div>
             </div>

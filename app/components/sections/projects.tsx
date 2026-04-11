@@ -17,7 +17,7 @@ export default function Projects() {
     const [previewTop, setPreviewTop] = useState<number>(0);
     const [lastProject, setLastProject] = useState<Project | null>(null);
     const [mobileVisible, setMobileVisible] = useState<number>(3);
-    const [desktopVisible, setDesktopVisible] = useState<number>(6);
+    const [desktopVisible, setDesktopVisible] = useState<number>(5);
     const [isNavigatingToProject, setIsNavigatingToProject] = useState(false);
     const [transitionKey, setTransitionKey] = useState(0);
 
@@ -127,7 +127,7 @@ export default function Projects() {
                     />
                 </div>
             )}
-            <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
+            <div className="max-w-480 mx-auto px-6 md:px-12 lg:px-20 xl:px-32">
                 <div className="projects-header pt-12 lg:pt-20 pb-8 lg:pb-12">
                     <span className="text-[10px] uppercase tracking-[0.3em] font-mono text-white/30 mb-2 lg:mb-4 block">Selected Projects</span>
                     <h2 className="text-2xl md:text-5xl lg:text-7xl font-black text-white uppercase leading-[0.9] tracking-tighter italic mb-4">
@@ -178,9 +178,6 @@ export default function Projects() {
                                                 <h3 className="text-white font-black uppercase tracking-tight text-xl leading-tight">
                                                     {project.title}
                                                 </h3>
-                                                <p className="text-white/60 text-sm italic font-medium mt-1">
-                                                    {project.role}
-                                                </p>
                                             </div>
 
                                             <div className="flex items-center gap-3 shrink-0">
@@ -305,7 +302,6 @@ export default function Projects() {
                                                     >
                                                         {project.role}
                                                     </p>
-
                                                     <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-white/30 font-mono text-[10px] uppercase tracking-widest">
                                                         <span>{project.year}</span>
                                                         <span className="text-white/20">/</span>
@@ -328,7 +324,7 @@ export default function Projects() {
                                 <div className="pt-10 flex justify-center">
                                     <button
                                         type="button"
-                                        onClick={() => setDesktopVisible((v) => Math.min(projects.length, v + 6))}
+                                        onClick={() => setDesktopVisible((v) => Math.min(projects.length, v + 5))}
                                         className="px-6 py-3 text-[11px] font-mono uppercase tracking-[0.35em] text-white/70 hover:text-white border border-white/15 hover:border-white/35 transition-colors bg-white/5"
                                     >
                                         Show more projects
@@ -341,7 +337,7 @@ export default function Projects() {
                         <div
                             className={[
                                 "absolute right-0 -translate-y-1/2",
-                                "w-[380px] xl:w-[420px] pointer-events-none",
+                                "w-95 xl:w-105 pointer-events-none",
                                 "transition-[opacity,transform] duration-200 ease-out",
                                 isPreviewVisible ? "opacity-100 translate-x-0 scale-100" : "opacity-0 translate-x-3 scale-[0.98]"
                             ].join(" ")}
