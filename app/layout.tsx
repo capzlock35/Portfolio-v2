@@ -7,6 +7,7 @@ import AppNavbar from "./components/navbar/app-navbar";
 import SmoothScroll from "./components/smooth-scroll";
 import PageTransition from "./components/page-transition";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import CanvasCursor from "./components/canvas-cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+          <CanvasCursor /> 
         <AppNavbar />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <SmoothScroll>

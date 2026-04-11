@@ -244,3 +244,16 @@ html.route-transition-lock *::-webkit-scrollbar,
 body.route-transition-lock *::-webkit-scrollbar {
   display: none !important;
 }
+
+body {
+  cursor: none;
+}
+
+* {
+  cursor: none !important;
+}
+
+input,
+textarea {
+  cursor: text !important;
+}
