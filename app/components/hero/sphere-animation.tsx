@@ -102,7 +102,7 @@ export default function SphereAnimation() {
     return (
         <div className="relative w-full h-full flex items-center justify-center p-10" ref={wrapperRef}>
             <div className="animation-wrapper w-full relative" style={{ paddingBottom: '100%' }}>
-                <div className="sphere-animation absolute top-1/2 left-1/2 w-[580px] h-[580px] -mt-[290px] -ml-[290px]">
+                <div className="sphere-animation absolute top-1/2 left-1/2 w-145 h-145 -mt-72.5 -ml-72.5">
                     <svg className="sphere block w-full h-full" viewBox="0 0 440 440" stroke="rgba(80,80,80,.35)">
                         <defs>
                             <linearGradient id="sphereGradient" x1="5%" x2="5%" y1="0%" y2="15%">

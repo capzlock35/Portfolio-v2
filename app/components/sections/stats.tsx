@@ -130,7 +130,7 @@ export default function Stats() {
 
     return (
         <section ref={sectionRef} id="stats" className="relative bg-black py-16 sm:py-20 lg:py-28 overflow-hidden">
-            <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-44 max-w-[1920px] mx-auto">
+            <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-44 max-w-480 mx-auto">
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-10 md:gap-14 lg:gap-16 items-start">
                     {/* Left — About */}
                     <div className="stats-panel-left w-full lg:w-5/12 space-y-6">
@@ -220,7 +220,7 @@ export default function Stats() {
     <div className="relative w-full max-w-sm mx-auto">
         
         {/* Polaroid Frame */}
-        <div className="bg-white p-3 pb-2 rounded-sm shadow-2xl rotate-[-2deg] hover:rotate-0 transition duration-300">
+        <div className="bg-white p-3 pb-2 rounded-sm shadow-2xl -rotate-2 hover:rotate-0 transition duration-300">
             
             <Image
                 src="/images/awma.jpg"
