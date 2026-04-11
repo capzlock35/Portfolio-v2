@@ -96,25 +96,25 @@ export default function Skills() {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    // return (
-    //     <section ref={sectionRef} className="skills-section relative bg-black overflow-hidden py-8 sm:py-12 md:py-16 lg:py-24">
-    //         {/* Gradient overlays for fade effect - smaller on mobile */}
-    //         <div className="absolute inset-y-0 left-0 w-12 sm:w-16 md:w-24 lg:w-32 bg-linear-to-r from-black via-black/80 to-transparent z-20 pointer-events-none" />
-    //         <div className="absolute inset-y-0 right-0 w-12 sm:w-16 md:w-24 lg:w-32 bg-linear-to-l from-black via-black/80 to-transparent z-20 pointer-events-none" />
+    return (
+        <section ref={sectionRef} className="skills-section relative bg-black overflow-hidden py-8 sm:py-12 md:py-16 lg:py-24">
+            {/* Gradient overlays for fade effect - smaller on mobile */}
+            <div className="absolute inset-y-0 left-0 w-12 sm:w-16 md:w-24 lg:w-32 bg-linear-to-r from-black via-black/80 to-transparent z-20 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-12 sm:w-16 md:w-24 lg:w-32 bg-linear-to-l from-black via-black/80 to-transparent z-20 pointer-events-none" />
 
-    //           <div className="relative z-10 overflow-hidden space-y-4 sm:space-y-6 md:space-y-8">
-    //               {/* First row - scrolling left */}
-    //               <VelocityText baseVelocity={isMobile ? 60 : 80} isMobile={isMobile}>
-    //                   {techStackString}
-    //               </VelocityText>
+              <div className="relative z-10 overflow-hidden space-y-4 sm:space-y-6 md:space-y-8">
+                  {/* First row - scrolling left */}
+                  <VelocityText baseVelocity={isMobile ? 60 : 80} isMobile={isMobile}>
+                      {techStackString}
+                  </VelocityText>
 
-    //               {/* Second row - scrolling right (opposite direction) */}
-    //               <VelocityText baseVelocity={isMobile ? -60 : -80} isMobile={isMobile}>
-    //                   {techStackString}
-    //               </VelocityText>
-    //           </div>
-    //     </section>
-    // );
+                  {/* Second row - scrolling right (opposite direction) */}
+                  <VelocityText baseVelocity={isMobile ? -60 : -80} isMobile={isMobile}>
+                      {techStackString}
+                  </VelocityText>
+              </div>
+        </section>
+    );
 }
 
     
