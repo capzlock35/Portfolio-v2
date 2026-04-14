@@ -23,6 +23,10 @@ export default function AppNavbar() {
         }
     }, [showExpModal]);
 
+    
+
+    
+
     const closeExpModal = () => {
         setIsClosingExpModal(true);
         setTimeout(() => {
@@ -89,15 +93,19 @@ export default function AppNavbar() {
         <>
             <nav className={`fixed top-0 w-full z-50 flex justify-between items-center p-6 px-8 md:px-12 lg:px-20 transition-transform duration-300 bg-black/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none ${navHidden && !menuOpen ? "-translate-y-full" : "translate-y-0"}`}>
                 {/* Left - Dashboard */}
-                <button
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                    className="text-white uppercase tracking-wider text-xs md:text-sm font-medium hover:text-white/80 transition-colors cursor-pointer"
-                >
-                    DASHBOARD
-                </button>
+<button
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+  className="hover:opacity-80 transition-opacity cursor-pointer"
+>
+  <img
+    src="/logoawma.png"
+    alt="Dashboard Logo"
+    className="h-10 md:h-12 w-auto"
+  />
+</button>
 
                 {/* Center - Desktop Navigation */}
-                <div className="hidden lg:flex items-center gap-8 md:gap-12 lg:gap-16">
+                <div className="hidden">
                     {/* EXP Button */}
                     <button
                         onClick={() => setShowExpModal(true)}
@@ -153,7 +161,7 @@ export default function AppNavbar() {
                 {/* Mobile - Hamburger Button */}
                 <button
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="lg:hidden relative z-60 flex flex-col items-center justify-center w-10 h-10 gap-[6px]"
+                    className="relative z-60 flex flex-col items-center justify-center w-10 h-10 gap-[6px]"
                     aria-label="Toggle menu"
                 >
                     <span
@@ -176,7 +184,7 @@ export default function AppNavbar() {
 
             {/* Mobile Full-Screen Menu Overlay */}
             <div
-                className={`fixed inset-0 z-55 lg:hidden transition-all duration-500 ${
+                className={`fixed inset-0 z-55 transition-all duration-500 ${
                     menuOpen
                         ? "opacity-100 pointer-events-auto"
                         : "opacity-0 pointer-events-none"

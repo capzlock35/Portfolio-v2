@@ -134,105 +134,131 @@ export default function Marquee() {
 
     return (
         <section
-            ref={sectionRef}
-            className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-24"
-        >
-            {/* DESKTOP VIEW */}
-            <div className="hidden md:flex items-center overflow-hidden">
-                <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
-                
-                <div className="w-full flex flex-col justify-center gap-12 lg:gap-14">
-                    {/* Row 1 (right -> left) */}
-                    <div
-                        ref={trackTopRef}
-                        className="flex items-center whitespace-nowrap will-change-transform"
-                    >
-                        <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
-                             QA
-                        </span>
-                        <span className="text-[clamp(2rem,3vw,3.5rem)] text-white/20 mx-14 select-none font-light italic">
-                            &
-                        </span>
-                        <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
-                            Front-End
-                        </span>
+    ref={sectionRef}
+    className="relative overflow-hidden bg-black py-16 sm:py-20 md:py-24"
+>
+    {/* DESKTOP VIEW */}
+    <div className="hidden md:flex items-center overflow-hidden">
+        <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
+        
+        <div className="w-full flex flex-col justify-center gap-12 lg:gap-14">
+            {/* Row 1 */}
+            <div
+                ref={trackTopRef}
+                className="flex items-center whitespace-nowrap will-change-transform min-w-max"
+            >
+                <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
+                    QA
+                </span>
 
-                        <div className="ml-24 pr-32 flex flex-col gap-2">
-                            <span className="text-base text-white/40 font-mono uppercase tracking-[0.2em]">Expertise</span>
-                            <div className="h-px w-8 bg-white/20 mb-2" />
-                            <span className="text-xl text-white/70 font-bold uppercase tracking-tight">QA Testing</span>
-                            <span className="text-xl text-white/70 font-bold uppercase tracking-tight">Front-End Development</span>
-                            <span className="text-xl text-white/70 font-bold uppercase tracking-tight">API / Automation</span>
-                            <span className="text-xl text-white/70 font-bold uppercase tracking-tight">Various Testing Types</span>
-                        </div>
-                    </div>
+                <span className="text-[clamp(2rem,3vw,3.5rem)] text-white/20 mx-10 select-none font-light italic">
+                    &
+                </span>
 
-                    {/* Row 2 (left -> right) */}
-                    <div
-                        ref={trackBottomRef}
-                        className="flex items-center whitespace-nowrap will-change-transform"
-                    >
-                        <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
-                            Creation 
-                        </span>
-                        <span className="text-[clamp(2rem,3vw,3.5rem)] text-white/20 mx-14 select-none font-light italic">
-                            &
-                        </span>
-                        <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
-                            Quality
-                        </span>
+                <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
+                    Front-End
+                </span>
 
-                        <div className="ml-24 pr-32 flex flex-col gap-2 text-right">
-                            <span className="text-base text-white/40 font-mono uppercase tracking-[0.2em]">Focus</span>
-                            <div className="ml-auto h-px w-8 bg-white/20 mb-2" />
-                            <span className="text-xl text-white/70 font-bold uppercase tracking-tight">Test Coverage</span>
-                            <span className="text-xl text-white/70 font-bold uppercase tracking-tight">Automation</span>
-                            <span className="text-xl text-white/70 font-bold uppercase tracking-tight">Clean UI</span>
-                            <span className="text-xl text-white/70 font-bold uppercase tracking-tight">Usability</span>
-                        </div>
-                    </div>
+                <div className="ml-12 pr-12 flex flex-col gap-2">
+                    <span className="text-base text-white/40 font-mono uppercase tracking-[0.2em]">
+                        Expertise
+                    </span>
+                    <div className="h-px w-8 bg-white/20 mb-2" />
+                    <span className="text-xl text-white/70 font-bold uppercase tracking-tight">
+                        QA Testing
+                    </span>
+                    <span className="text-xl text-white/70 font-bold uppercase tracking-tight">
+                        Front-End Development
+                    </span>
+                    <span className="text-xl text-white/70 font-bold uppercase tracking-tight">
+                        API / Automation
+                    </span>
+                    <span className="text-xl text-white/70 font-bold uppercase tracking-tight">
+                        Various Testing Types
+                    </span>
                 </div>
             </div>
 
-            {/* MOBILE VIEW - Redesigned for vertical screens */}
-            <div className="md:hidden px-6 flex flex-col gap-12">
-                <div className="space-y-2">
-                    <div ref={mobileRow1Ref} className="whitespace-nowrap translate-x-12">
-                        <span className="text-5xl font-black text-white uppercase leading-none tracking-tighter">
-                           QA Tester
-                        </span>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <div className="h-px flex-1 bg-white/10" />
-                        <span className="text-xl font-light italic text-white/30">&</span>
-                        <div className="h-px flex-1 bg-white/10" />
-                    </div>
-                    <div ref={mobileRow2Ref} className="whitespace-nowrap -translate-x-12 flex justify-end">
-                        <span className="text-5xl font-black text-white uppercase leading-none tracking-tighter">
-                            Front-End
-                        </span>
-                    </div>
+            {/* Row 2 */}
+            <div
+                ref={trackBottomRef}
+                className="flex items-center whitespace-nowrap will-change-transform min-w-max"
+            >
+                <div className="mr-12 flex flex-col gap-2 text-left">
+                    <span className="text-base text-white/40 font-mono uppercase tracking-[0.2em]">
+                        Focus
+                    </span>
+                    <div className="h-px w-8 bg-white/20 mb-2" />
+                    <span className="text-xl text-white/70 font-bold uppercase tracking-tight">
+                        Test Coverage
+                    </span>
+                    <span className="text-xl text-white/70 font-bold uppercase tracking-tight">
+                        Automation
+                    </span>
+                    <span className="text-xl text-white/70 font-bold uppercase tracking-tight">
+                        Clean UI
+                    </span>
+                    <span className="text-xl text-white/70 font-bold uppercase tracking-tight">
+                        Usability
+                    </span>
                 </div>
 
-                <div className="mobile-services-grid grid grid-cols-1 gap-4 pt-8">
-                    <span className="text-[10px] text-white/30 font-mono uppercase tracking-[0.3em] mb-2">Expertise</span>
-                    {[
-                        "QA Testing [Manual / Automated]",
-                        "Front-End Development",
-                        "API / Automation",
-                        "Clean UI / Responsive Design",
-                        "Usability / Performance",
-                    ].map((service, i) => (
-                        <div key={i} className="mobile-service-item flex items-center gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                            <span className="text-lg text-white/60 font-medium tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
-                                {service}
-                            </span>
-                        </div>
-                    ))}
-                </div>
+                <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
+                    Creation
+                </span>
+
+                <span className="text-[clamp(2rem,3vw,3.5rem)] text-white/20 mx-10 select-none font-light italic">
+                    &
+                </span>
+
+                <span className="text-[clamp(4rem,8vw,10rem)] font-black text-white leading-[0.9] tracking-tighter select-none">
+                    Quality
+                </span>
             </div>
-        </section>
+        </div>
+    </div>
+
+    {/* MOBILE VIEW (unchanged) */}
+    <div className="md:hidden px-6 flex flex-col gap-12">
+        <div className="space-y-2">
+            <div ref={mobileRow1Ref} className="whitespace-nowrap translate-x-12">
+                <span className="text-5xl font-black text-white uppercase leading-none tracking-tighter">
+                    QA Tester
+                </span>
+            </div>
+            <div className="flex items-center gap-4">
+                <div className="h-px flex-1 bg-white/10" />
+                <span className="text-xl font-light italic text-white/30">&</span>
+                <div className="h-px flex-1 bg-white/10" />
+            </div>
+            <div ref={mobileRow2Ref} className="whitespace-nowrap -translate-x-12 flex justify-end">
+                <span className="text-5xl font-black text-white uppercase leading-none tracking-tighter">
+                    Front-End
+                </span>
+            </div>
+        </div>
+
+        <div className="mobile-services-grid grid grid-cols-1 gap-4 pt-8">
+            <span className="text-[10px] text-white/30 font-mono uppercase tracking-[0.3em] mb-2">
+                Expertise
+            </span>
+            {[
+                "QA Testing [Manual / Automated]",
+                "Front-End Development",
+                "API / Automation",
+                "Clean UI / Responsive Design",
+                "Usability / Performance",
+            ].map((service, i) => (
+                <div key={i} className="mobile-service-item flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                    <span className="text-lg text-white/60 font-medium tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+                        {service}
+                    </span>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
     );
 }

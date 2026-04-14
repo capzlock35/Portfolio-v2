@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@/app/hooks/useGSAP";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SparklesText } from "@/components/ui/sparkles-text";
 import { Mail, Github, Linkedin, Facebook, ArrowUpRight, Copy, Check } from "lucide-react";
 
 if (typeof window !== "undefined") {
@@ -100,8 +101,10 @@ export default function Contact() {
                                 </h2>
                             </div>
                             <div className="overflow-hidden">
-                                <h2 className="contact-header-text block text-[clamp(3.5rem,9vw,8rem)] font-black uppercase leading-[0.9] text-white/30">
-                                    Together
+                                <h2 className="contact-header-text block text-[clamp(3.5rem,9vw,8rem)] font-black uppercase leading-[0.9]">
+                                    <SparklesText className="text-[clamp(3.5rem,9vw,8rem)] font-black uppercase leading-[0.9] text-white/30">
+                                        Together
+                                    </SparklesText>
                                 </h2>
                             </div>
                         </div>

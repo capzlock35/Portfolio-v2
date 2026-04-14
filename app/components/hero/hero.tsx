@@ -104,14 +104,14 @@ export default function Hero() {
                 </div>
 
                     {/* Bottom about (no extra empty space) */}
-                    <div className="flex items-end justify-between gap-6">
+                    {/* <div className="flex items-end justify-between gap-6">
                         <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-white/30">
                             About
                         </div>
                         <p className="max-w-[24rem] text-xs leading-relaxed text-white/55">
                            Software QA Tester and Front-End Web Developer dedicated to ensuring quality and crafting modern web experiences.
                         </p>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Desktop/tablet layout (existing) */}
@@ -255,31 +255,83 @@ export default function Hero() {
             </div>
 
             {/* ── Bottom bar with metadata ── */}
-            <div className="hero-bottom-bar hidden md:flex absolute bottom-6 sm:bottom-8 left-0 right-0 px-4 sm:px-6 md:px-12 lg:px-20 items-center justify-between pointer-events-none">
-                {/* Available badge */}
+            {/* DESKTOP VERSION (UNCHANGED) */}
+            <div className="hidden md:flex hero-bottom-bar absolute bottom-6 left-0 right-0 px-12 items-center justify-between pointer-events-none">
+
+                {/* Available */}
                 <div className="flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
                     </span>
-                    <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-white/40 font-medium">Available for work</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium">
+                        Available to work
+                    </span>
                 </div>
 
-                {/* Live clock */}
-                <div className="hidden sm:flex flex-col items-center gap-2">
-                    <div className="flex items-center gap-3 text-white/30 font-mono text-xs tracking-wider">
+                {/* Local time */}
+                <div className="flex flex-col items-center leading-none">
+                    <div className="flex items-center gap-2 text-white/30 font-mono text-xs tracking-wider">
                         <span>LOCAL</span>
                         <span className="text-white/50">{currentTime}</span>
                     </div>
-                    <div className="text-white/20 font-mono text-[10px] tracking-[0.3em]">AWMA</div>
+                    <div className="text-white/20 font-mono text-[10px] tracking-[0.3em] mt-1">
+                        AWMA
+                    </div>
                 </div>
 
-                {/* Scroll indicator */}
+                {/* Scroll (desktop mouse) */}
                 <div className="flex items-center gap-2 text-white/30">
-                    <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium">Scroll</span>
+                    <span className="text-xs uppercase tracking-[0.2em] font-medium">
+                        Scroll
+                    </span>
                     <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
                         <div className="w-0.5 h-2 bg-white/40 rounded-full animate-bounce" />
                     </div>
+                </div>
+
+            </div>
+
+            {/* MOBILE VERSION (NEW LAYOUT) */}
+            <div className="md:hidden hero-bottom-bar flex flex-col absolute bottom-6 left-0 right-0 px-6 pointer-events-none gap-3">
+
+                {/* TOP: Swipe */}
+                <div className="flex justify-center">
+                    <div className="flex items-center gap-2 text-white/30">
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-medium">
+                            Swipe
+                        </span>
+                        <div className="w-6 h-10 rounded-[10px] border border-white/20 flex items-center justify-center">
+                            <span className="text-white/40 text-xs animate-bounce">↓</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* BOTTOM ROW */}
+                <div className="flex items-center justify-between">
+
+                    {/* LEFT */}
+                    <div className="flex items-center gap-2">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                        </span>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium">
+                            Available to work
+                        </span>
+                    </div>
+
+                    {/* RIGHT */}
+                    <div className="flex flex-col items-end leading-none">
+                        <div className="flex items-center gap-2 text-white/30 font-mono text-[10px] tracking-wider">
+                            <span>LOCAL</span>
+                            <span className="text-white/50">{currentTime}</span>
+                        </div>
+                        <div className="text-white/20 font-mono text-[9px] tracking-[0.3em] mt-1">
+                            AWMA
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

@@ -50,10 +50,10 @@ export default function Footer() {
     return (
         <footer ref={containerRef} className="relative bg-black w-full overflow-hidden border-t border-white/10 pt-20 pb-10">
             {/* Background Atmosphere */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-purple-900/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
+            <div className="absolute bottom-0 right-0 w-75 h-75 bg-purple-900/5 blur-[100px] rounded-full pointer-events-none" />
 
-            <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 relative z-10">
+            <div className="max-w-480 mx-auto px-4 sm:px-6 md:px-12 lg:px-20 relative z-10">
                 <div className="flex flex-col gap-16 mb-16">
                     {/* Top Section: Navigation & Scroll To Top */}
                     <div className="footer-content flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
@@ -87,9 +87,9 @@ export default function Footer() {
                     {/* Middle Section: Large Name Branding */}
                     <div className="footer-content py-12
                     bg-[linear-gradient(to_right,rgba(255,255,255,0.05),rgba(255,255,255,0.2),rgba(255,255,255,0.05))]
-                    bg-[length:100%_1px]
+                    bg-size-[100%_1px]
                     bg-top bg-no-repeat
-                    after:content-[''] after:block after:w-full after:h-[1px]
+                    after:content-[''] after:block after:w-full after:h-px
                     after:bg-[linear-gradient(to_right,rgba(255,255,255,0.05),rgba(255,255,255,0.2),rgba(255,255,255,0.05))]
                     after:mt-12
                     ">
@@ -116,7 +116,7 @@ export default function Footer() {
                             <a 
                                 key={link.name}
                                 href={link.url}
-                                className="group p-2 rounded-full border border-white/5 bg-white/[0.02] hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                                className="group p-2 rounded-full border border-white/5 bg-white/2 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                                 aria-label={link.name}
                             >
                                 <link.icon className="w-4 h-4 text-white/40 group-hover:text-white transition-colors" />
